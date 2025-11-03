@@ -10,6 +10,7 @@ import { listWebhooks } from './routes/list-webhooks'
 import { fastifySwagger } from '@fastify/swagger'
 import { fastifyCors } from '@fastify/cors'
 import ScalarApiReference from '@scalar/fastify-api-reference'
+import { env } from './env'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -42,7 +43,7 @@ app.register(listWebhooks)
 
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
     host: '0.0.0.0',
   })
   .then(() => {

@@ -1,5 +1,4 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 const RootLayout = () => (
   <>
@@ -9,8 +8,8 @@ const RootLayout = () => (
       </Link>{' '}
     </div>
     <hr />
+    {/* conteudo de cada página */}
     <Outlet />
-    <TanStackRouterDevtools />
   </>
 )
 

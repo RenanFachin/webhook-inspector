@@ -4,6 +4,7 @@ import { Sidebar } from '../components/sidebar'
 import { WebhookDetailHeader } from '../components/webhook-detail.header'
 import { SectionTitle } from '../components/section-title'
 import { SectionDataTable } from '../components/section-data-table'
+import { CodeBlock } from '../components/ui/code-block'
 
 
 export const Route = createFileRoute('/')({
@@ -29,6 +30,7 @@ function Index() {
       value: '123 byes',
     },
   ]
+
 
 
   return (
@@ -57,7 +59,30 @@ function Index() {
 
 
 
-                <div></div>
+                <div className='space-y-4'>
+                  <SectionTitle>
+                    Query Parameters
+                  </SectionTitle>
+
+                  <SectionDataTable data={overviewData} />
+                </div>
+
+                <div className='space-y-4'>
+                  <SectionTitle>
+                    Headers
+                  </SectionTitle>
+
+                  <SectionDataTable data={overviewData} />
+                </div>
+
+
+                <div className='space-y-4'>
+                  <SectionTitle>
+                    Request Body
+                  </SectionTitle>
+
+                  <CodeBlock code={JSON.stringify(overviewData, null, 2)} />
+                </div>
               </div>
             </div>
           </div>

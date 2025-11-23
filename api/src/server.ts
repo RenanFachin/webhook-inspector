@@ -11,6 +11,7 @@ import { fastifySwagger } from '@fastify/swagger'
 import { fastifyCors } from '@fastify/cors'
 import ScalarApiReference from '@scalar/fastify-api-reference'
 import { env } from './env'
+import { getWebhook } from './routes/get-webhook'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -39,6 +40,7 @@ app.register(ScalarApiReference, {
 })
 
 app.register(listWebhooks)
+app.register(getWebhook)
 
 
 app
